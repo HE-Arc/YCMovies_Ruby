@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'my_app_name'
-set :repo_url, 'https://github.com/HE-Arc/YCMovies_Ruby.git/code'
+set :repo_url, 'https://github.com/HE-Arc/YCMovies_Ruby.git/code/ror/'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
