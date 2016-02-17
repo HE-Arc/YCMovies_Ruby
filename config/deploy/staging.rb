@@ -46,6 +46,9 @@ server 'srvz-webapp.he-arc.ch', user: 'bastien', roles: %w{app db web}
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }
+set :ssh_options,{
+port: 2002
+}
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
@@ -59,4 +62,7 @@ server 'srvz-webapp.he-arc.ch', user: 'bastien', roles: %w{app db web}
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
-require Rails.root.join("config/environements/development")
+prefix = 'source ~/.bash_profile;'
+[:bundle, :rake, :rails].each do |cmd|
+SSHKit.config.command_map.prefix[cmd].push(prefix)
+end
