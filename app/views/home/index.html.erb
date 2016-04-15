@@ -1,0 +1,10 @@
+<% @posts.each do |post| %>
+<div class="article">
+	<div class="clr"></div>
+	
+	<h2><span><%=link_to post.title,post%></span></h2>
+	<img src="images/img1.jpg" width="263" height="146" alt="" class="fl" />
+	<p><%=post.body%></p>
+	 <p class="spec"><a href="#" class="rm">Read more</a> <a href="#" class="com">Comments (3)</a></p>
+</div>
+<% end%>
