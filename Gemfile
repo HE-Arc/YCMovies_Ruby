@@ -11,6 +11,7 @@ gem 'pg'
 gem 'rename'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
+gem 'rails_12factor', group: :production
 gem 'protected_attributes'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
