@@ -4,12 +4,6 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
 
-  get 'paes/abooller'
-
-  get 'paes/about'
-
-  get 'paes/contact'
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'categories/index'
@@ -26,7 +20,10 @@ Rails.application.routes.draw do
 
   get '/about', :to => 'pages#about'
   get '/contact', :to => 'pages#contact'
-  get '/admin', :to => 'categories#admin'
+  
+  get '/categories/admin', to: redirect('/admin')
+  get '/posts/admin', to: redirect('/admin')
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
