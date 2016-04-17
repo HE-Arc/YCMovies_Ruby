@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
 	def index
-		@posts = Post.all
+	@q = Post.ransack(params[:q])
+	@posts=@q.result(distinct: true)
 	end
 	
 	def show
 		@post = Post.find(params[:id])
+		@post_comment = PostComment.new(:post => @post)
 	end
 	
 	def new
@@ -42,6 +44,6 @@ class PostsController < ApplicationController
 	
 		private
 	def post_params
-		params.require(:post).permit(:title, :body, :category_id)
+		params.require(:post).permit(:title, :body, :category_id, :admin_user_id)
 	end
 end

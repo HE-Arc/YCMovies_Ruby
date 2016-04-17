@@ -1,10 +1,5 @@
 <%= render "partials/header" %>
   <div class="hbg">
-  	  <div class ="flashmessage">
-		<% flash.each do |key,value|%>
-		<p><%= value %></p>
-		<%end%>
-		</div>
     <div class="logo">
       <h1><a href="index.html"></a></h1>
     </div>
@@ -12,6 +7,11 @@
   <div class="content">
     <div class="content_resize">
       <div class="mainbar">
+	    <div class ="flashmessage">
+		<% flash.each do |key,value|%>
+		<p><%= value %></p>
+		<%end%>
+		</div>
 
 
 	    <%= yield %>      
