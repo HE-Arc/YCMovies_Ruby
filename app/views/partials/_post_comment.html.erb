@@ -1,6 +1,4 @@
-class PostComment < ActiveRecord::Base
-belongs_to :post
-
-validates_presence:of :name
-validates_presence:of :body
-end
+<div class="post_comment">
+<i><%=h post_comment.name %> says: </i><br />
+<%= simple_format h(post_comment.body) %>
+</div>

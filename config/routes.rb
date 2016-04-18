@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   get 'home/index'
   resources :posts
   resources :categories
-  resources :admin
 
   get '/about', :to => 'pages#about'
   get '/contact', :to => 'pages#contact'
