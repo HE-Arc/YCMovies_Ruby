@@ -23,3 +23,8 @@ test:
 
 production:
   <<: *default
+  host: postgres
+  username: <%= ENV['POSTGRES_USERNAME'] %>
+  database: <%= ENV['POSTGRES_USERNAME'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  schema_search_path: production
